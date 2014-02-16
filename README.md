@@ -1,0 +1,4 @@
+logo
+====
+
+The Nutils logo
