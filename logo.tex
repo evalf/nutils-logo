@@ -1,0 +1,32 @@
+\documentclass[tikz]{standalone}
+
+\newcommand\bbox{(-2.5,-2.5) rectangle (2.5,2.5)}
+\newcommand\arcf{(-1,.5) arc (180:0:.5)--(0,-.5) arc (0:180:-.5)--(1,.5) arc (180:0:.5)--(2,-.5) arc (180:0:-1.5)--cycle}
+\newcommand\arcp{(0,-.5) arc (0:180:-.5)--(1,.5) arc (180:0:.5)--(2,-.5)}
+\newcommand\arcq{(2,-.5) arc (180:0:-1.5)}
+
+\definecolor{pyblue}{RGB}{55,118,171} % #3776ab
+\definecolor{pyyellow}{RGB}{255,222,79} % #ffde4f
+
+\begin{document}
+
+\begin{tikzpicture} % page 1: the logo
+  \path \bbox;
+  \fill [bottom color=pyblue!125!white,top color=pyblue!75,shading angle=45] \arcf;
+  \fill [top color=pyyellow!125!white,bottom color=pyyellow!75,shading angle=45,rotate=180] \arcf;
+  \draw [pyblue] \arcq;
+  \draw [pyyellow,rotate=180] \arcq;
+  \draw [pyblue] \arcp;
+  \draw [pyyellow,rotate=180] \arcp;
+  \path [top color=pyyellow,bottom color=pyblue] (-.007,-.507) rectangle (.007,.507);
+\end{tikzpicture}
+
+\begin{tikzpicture} % page 2: transparency mask
+  \path \bbox;
+  \filldraw [black] \arcf;
+  \filldraw [black,rotate=180] \arcf;
+\end{tikzpicture}
+
+\end{document}
+
+% vim:syntax=tex
