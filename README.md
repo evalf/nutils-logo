@@ -1,5 +1,5 @@
-The Nutils logo
-====
+The Nutils Logo
+===============
 
 The present repository holds the final artwork of the Nutils project logo. With
 [TikZ/PGF] (http://pgf.sourceforge.net/) and [Poppler]
